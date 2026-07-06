@@ -117,8 +117,71 @@ export default function DevotionPage() {
   alert("Devotion submitted! +20 points");
 
   // Clear form
-  setScripture("");
+    setScripture("");
   setObservation("");
   setApplication("");
   setPrayer("");
+}
+
+return (
+  <main className="min-h-screen bg-blue-50 pb-24">
+
+    <div className="p-8">
+      <div className="max-w-2xl mx-auto bg-white p-8 rounded-xl shadow-lg">
+
+        <h1 className="text-3xl font-bold text-blue-900 mb-6">
+          Daily Devotion
+        </h1>
+
+        <form onSubmit={handleSubmit} className="space-y-4">
+
+          <input
+            type="text"
+            placeholder="Scripture"
+            value={scripture}
+            onChange={(e) => setScripture(e.target.value)}
+            className="w-full p-3 border rounded-lg"
+            required
+          />
+
+          <textarea
+            placeholder="Observation"
+            value={observation}
+            onChange={(e) => setObservation(e.target.value)}
+            className="w-full p-3 border rounded-lg"
+            required
+          />
+
+          <textarea
+            placeholder="Application"
+            value={application}
+            onChange={(e) => setApplication(e.target.value)}
+            className="w-full p-3 border rounded-lg"
+            required
+          />
+
+          <textarea
+            placeholder="Prayer"
+            value={prayer}
+            onChange={(e) => setPrayer(e.target.value)}
+            className="w-full p-3 border rounded-lg"
+            required
+          />
+
+          <button
+            type="submit"
+            className="w-full bg-blue-900 text-white p-3 rounded-lg hover:bg-blue-700"
+          >
+            Submit Devotion
+          </button>
+
+        </form>
+
+      </div>
+    </div>
+
+    <MobileNav />
+
+  </main>
+);
 }
